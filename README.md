@@ -110,4 +110,12 @@ To share your own screenshots and visualizations from the app:
 1. Visit the **[Gallery Upload Link](#)** (link to your gallery or file-sharing service).
 2. Upload your images.
 3. Images will be displayed in the README to showcase the tool's capabilities.
+# Streamlit section for uploading screenshots
+st.sidebar.header('Upload App Screenshots')
+uploaded_screenshot = st.sidebar.file_uploader("Upload Screenshot", type=["png", "jpg", "jpeg"])
+
+if uploaded_screenshot is not None:
+    # Display the uploaded screenshot
+    st.image(uploaded_screenshot, caption="Uploaded Screenshot", use_column_width=True)
+    st.success("Screenshot uploaded successfully!")
 
